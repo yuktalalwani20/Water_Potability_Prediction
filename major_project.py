@@ -12,7 +12,7 @@ import base64
 
 
 data = pd.read_csv('water_potability_2.csv')
-data = data.iloc[:,4:]
+data = data.iloc[:,1:]
 original_data = pd.read_csv('water_potability_2.csv')
 feature_list = {'ph':0,'Turbidity':0}
 
