@@ -11,9 +11,9 @@ import joblib
 import base64
 
 
-data = pd.read_csv('water_potability_2.csv')
+data = pd.read_csv('new_data.csv')
 data = data.iloc[:,1:]
-original_data = pd.read_csv('water_potability_2.csv')
+original_data = pd.read_csv('new_data.csv')
 feature_list = {'ph':0,'Turbidity':0}
 
 classifier = joblib.load('algorithms.sav')
