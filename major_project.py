@@ -51,7 +51,7 @@ if st.sidebar.button('Predict'):
         st.sidebar.markdown(' # Please fill all the values')
     else:
         #if st.sidebar.button('RF'):
-        pred = RandomForestclassifier.predict([list(feature_list.values())])
+        pred = RandomForestClassifier.predict([list(feature_list.values())])
         if pred[0]==0:
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
