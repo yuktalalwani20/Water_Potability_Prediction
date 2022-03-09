@@ -199,6 +199,8 @@ df['pH_Type'] = le.fit_transform(df['pH_Type'].astype(str))
 df['Turbidity_Type'] = le.fit_transform(df['Turbidity_Type'].astype(str))
 df.head(5)
 
+df.to_csv('new_data.csv')
+
 
 # In[22]:
 
