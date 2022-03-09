@@ -12,7 +12,7 @@ import base64
 
 
 data = pd.read_csv('new_data.csv')
-data = data.iloc[:,1:]
+data = data.iloc[:,0:4]
 original_data = pd.read_csv('new_data.csv')
 feature_list = {'ph':0,'Turbidity':0}
 
