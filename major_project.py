@@ -58,6 +58,7 @@ if st.sidebar.button('Predict'):
     
     
 st.image('water.jpg')
+st.dataframe(data.head(20))
 header = st.container()
 body = st.container()
 with header:
