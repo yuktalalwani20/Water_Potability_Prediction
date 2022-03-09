@@ -67,13 +67,13 @@ with header:
     plot_type = col1.selectbox('Plot the feature',['histogram','line plot','area chart'])
     feat = col1.selectbox('Which feature', ['ph','Turbidity'])
     if plot_type == 'histogram':
-        col2.bar_chart(data[feat][:90])
+        col2.bar_chart(data[feat][:200])
         col1.header(f'{plot_type} of {feat} feature')
     if plot_type == 'line plot':
-        col2.line_chart(data[feat][:90])
+        col2.line_chart(data[feat][:200])
         col1.header(f'{plot_type} of {feat} feature')
     if plot_type == 'area chart':
-        col2.area_chart(data[feat][:90])
+        col2.area_chart(data[feat][:200])
         col1.header(f'{plot_type} of {feat} feature')
 with body:
     col1, col2 = st.columns(2)
