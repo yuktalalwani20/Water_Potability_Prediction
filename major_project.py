@@ -50,11 +50,12 @@ if st.sidebar.button('Predict'):
     if 0 in list(feature_list.values()):
         st.sidebar.markdown(' # Please fill all the values')
     else:
-        pred = classifier.predict([list(feature_list.values())])
-        if pred[0]==0:
-            st.sidebar.markdown('# water is not so potable for drinking purpose')
-        else:
-            st.sidebar.markdown('# water is potable for drinking purpose')
+        if st.sidebar.button('RF'):
+            pred = RandomForestclassifier.predict([list(feature_list.values())])
+            if pred[0]==0:
+                st.sidebar.markdown('# water is not so potable for drinking purpose')
+            else:
+                st.sidebar.markdown('# water is potable for drinking purpose')
     
     
 st.image('water.jpg')
