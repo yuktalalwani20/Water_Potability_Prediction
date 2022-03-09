@@ -57,7 +57,7 @@ if st.sidebar.button('Predict'):
             st.sidebar.markdown('# water is potable for drinking purpose')
     
     
-st.image('aqua.jpg')
+st.image('water.jpg')
 header = st.container()
 body = st.container()
 with header:
