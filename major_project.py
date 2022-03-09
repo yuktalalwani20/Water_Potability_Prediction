@@ -57,11 +57,11 @@ if st.sidebar.button('Predict'):
             st.sidebar.markdown('# water is potable for drinking purpose')
     
     
-st.image('nature-3267579_1920.jpg')
+st.image('aqua.jpg')
 header = st.container()
 body = st.container()
 with header:
-    col1,col2,col3,col4 = st.columns(4)
+    col1,col2 = st.columns(2)
     plot_type = col1.selectbox('Plot the feature',['histogram','line plot','area chart'])
     feat = col1.selectbox('Which feature', ['ph','Turbidity'])
     if plot_type == 'histogram':
