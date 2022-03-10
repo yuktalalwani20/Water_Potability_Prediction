@@ -55,7 +55,7 @@ for j in feature_list.keys():
 
 
 
-if st.sidebar.button('Predict'):
+if st.sidebar.button('Predict_gb'):
     if 0 in list(feature_list.values()):
         st.sidebar.markdown(' # Please fill all the values')
     else:
@@ -65,8 +65,8 @@ if st.sidebar.button('Predict'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')
-'''           
-elif st.sidebar.button('Predict_svc'):
+          
+if st.sidebar.button('Predict_sv'):
     if 0 in list(feature_list.values()):
         st.sidebar.markdown(' # Please fill all the values')
     else:
@@ -76,7 +76,27 @@ elif st.sidebar.button('Predict_svc'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')    
-''' 
+if st.sidebar.button('Predict_rf'):
+    if 0 in list(feature_list.values()):
+        st.sidebar.markdown(' # Please fill all the values')
+    else:
+        #if st.sidebar.button('RF'):
+        pred = rfc.predict([list(feature_list.values())])
+        if pred[0]==0:
+            st.sidebar.markdown('# water is not so potable for drinking purpose')
+        else:
+            st.sidebar.markdown('# water is potable for drinking purpose')
+if st.sidebar.button('Predict_dt'):
+    if 0 in list(feature_list.values()):
+        st.sidebar.markdown(' # Please fill all the values')
+    else:
+        #if st.sidebar.button('RF'):
+        pred = dtc.predict([list(feature_list.values())])
+        if pred[0]==0:
+            st.sidebar.markdown('# water is not so potable for drinking purpose')
+        else:
+            st.sidebar.markdown('# water is potable for drinking purpose')
+            
 st.image('water.jpg')
 st.dataframe(data.head(200))
 header = st.container()
