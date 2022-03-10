@@ -65,7 +65,7 @@ if st.sidebar.button('Predict'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')
-if st.sidebar.button('Predict_DTC'):
+elif st.sidebar.button('Predict_DTC'):
     if 0 in list(feature_list.values()):
         st.sidebar.markdown(' # Please fill all the values')
     else:
