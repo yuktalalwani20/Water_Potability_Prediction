@@ -17,6 +17,11 @@ original_data = pd.read_csv('new_data.csv')
 feature_list = {'ph':0,'Turbidity':0,'pH_Type':0,'Turbidity_Type':0}
 
 classifier = joblib.load('algorithms.sav')
+rfc=joblib.load('rfclassifier.sav')
+dtc=joblib.load('dtclassifier.sav')
+xgbc=joblib.load('xgbclassifier.sav')
+gbc=joblib.load('gbclassifier.sav')
+svc=joblib.load('svc.sav')
 main_bg = "nature-3267579_1920.jpg"
 main_bg_ext = "jpg"
 
@@ -51,12 +56,21 @@ if st.sidebar.button('Predict'):
         st.sidebar.markdown(' # Please fill all the values')
     else:
         #if st.sidebar.button('RF'):
-        pred = classifier.predict([list(feature_list.values())])
+        pred = rfc.predict([list(feature_list.values())])
         if pred[0]==0:
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')
-    
+if st.sidebar.button('Predict_DTC'):
+    if 0 in list(feature_list.values()):
+        st.sidebar.markdown(' # Please fill all the values')
+    else:
+        #if st.sidebar.button('RF'):
+        pred = dtc.predict([list(feature_list.values())])
+        if pred[0]==0:
+            st.sidebar.markdown('# water is not so potable for drinking purpose')
+        else:
+            st.sidebar.markdown('# water is potable for drinking purpose')    
     
 st.image('water.jpg')
 st.dataframe(data.head(200))
