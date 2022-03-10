@@ -102,7 +102,7 @@ if st.sidebar.button('Predict_xgb'):
         st.sidebar.markdown(' # Please fill all the values')
     else:
         #if st.sidebar.button('RF'):
-        pred = xgbc.predict([list(feature_list.values())])
+        pred = xgbc.predict(np.array(feature_list.values()))
         if pred[0]==0:
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
