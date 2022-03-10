@@ -284,6 +284,33 @@ print('Confusion matrix of the model is',confusion_matrix(y_test,preds))
 print('Classification report:',classification_report(y_test,preds))
 joblib.dump(gbc,'gbclassifier.sav')
 
+rfc=RandomForestClassifier()
+rfc.fit(X_train,y_train)
+preds=gbc.predict(X_test)
+Accuracy_score.append(accuracy_score(y_test,preds))
+print('Accuracy is',accuracy_score(y_test,preds))
+print('Confusion matrix of the model is',confusion_matrix(y_test,preds))
+print('Classification report:',classification_report(y_test,preds))
+joblib.dump(rfc,'rfclassifier.sav')
+
+dtc=DecisionTreeClassifier()
+dtc.fit(X_train,y_train)
+preds=gbc.predict(X_test)
+Accuracy_score.append(accuracy_score(y_test,preds))
+print('Accuracy is',accuracy_score(y_test,preds))
+print('Confusion matrix of the model is',confusion_matrix(y_test,preds))
+print('Classification report:',classification_report(y_test,preds))
+joblib.dump(dtc,'dtclassifier.sav')
+
+svc=SVC()
+svc.fit(X_train,y_train)
+preds=gbc.predict(X_test)
+Accuracy_score.append(accuracy_score(y_test,preds))
+print('Accuracy is',accuracy_score(y_test,preds))
+print('Confusion matrix of the model is',confusion_matrix(y_test,preds))
+print('Classification report:',classification_report(y_test,preds))
+joblib.dump(svc,'svc.sav')
+
 # In[46]:
 
 
