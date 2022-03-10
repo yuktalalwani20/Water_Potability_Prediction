@@ -275,6 +275,15 @@ predict(DecisionTreeClassifier())
 # SupportVectorClassifier
 predict(SVC())
 '''
+xgb=XGBClassifier()
+xgb.fit(X_train,y_train)
+preds=xgb.predict(X_test)
+Accuracy_score.append(accuracy_score(y_test,preds))
+print('Accuracy is',accuracy_score(y_test,preds))
+print('Confusion matrix of the model is',confusion_matrix(y_test,preds))
+print('Classification report:',classification_report(y_test,preds))
+joblib.dump(xgb,'xgbclassifier.sav')
+
 gbc=GradientBoostingClassifier()
 gbc.fit(X_train,y_train)
 preds=gbc.predict(X_test)
