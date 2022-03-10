@@ -76,7 +76,7 @@ elif st.sidebar.button('Predict_svc'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')    
-   ''' 
+ ''' 
 st.image('water.jpg')
 st.dataframe(data.head(200))
 header = st.container()
