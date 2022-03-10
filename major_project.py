@@ -65,12 +65,12 @@ if st.sidebar.button('Predict'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')
-elif st.sidebar.button('Predict_DTC'):
+elif st.sidebar.button('Predict_svc'):
     if 0 in list(feature_list.values()):
         st.sidebar.markdown(' # Please fill all the values')
     else:
         #if st.sidebar.button('RF'):
-        pred = dtc.predict([list(feature_list.values())])
+        pred = svc.predict([list(feature_list.values())])
         if pred[0]==0:
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
