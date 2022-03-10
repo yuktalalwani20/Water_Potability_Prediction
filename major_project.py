@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
-#from xgboost import XGBClassifier
+from xgboost import XGBClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import GradientBoostingClassifier
@@ -23,7 +23,7 @@ feature_list = {'ph':0,'Turbidity':0,'pH_Type':0,'Turbidity_Type':0}
 classifier = joblib.load('algorithms.sav')
 rfc=joblib.load('rfclassifier.sav')
 dtc=joblib.load('dtclassifier.sav')
-#xgbc=joblib.load('xgbclassifier.sav')
+xgbc=joblib.load('xgbclassifier.sav')
 gbc=joblib.load('gbclassifier.sav')
 svc=joblib.load('svc.sav')
 main_bg = "nature-3267579_1920.jpg"
@@ -96,7 +96,18 @@ if st.sidebar.button('Predict_dt'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')
-            
+
+if st.sidebar.button('Predict_xgb'):
+    if 0 in list(feature_list.values()):
+        st.sidebar.markdown(' # Please fill all the values')
+    else:
+        #if st.sidebar.button('RF'):
+        pred = xgbc.predict([list(feature_list.values())])
+        if pred[0]==0:
+            st.sidebar.markdown('# water is not so potable for drinking purpose')
+        else:
+            st.sidebar.markdown('# water is potable for drinking purpose')
+         
 st.image('water.jpg')
 st.dataframe(data.head(200))
 header = st.container()
