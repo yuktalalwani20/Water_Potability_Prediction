@@ -246,35 +246,35 @@ def predict(model):
 
 # XGBClassifier
 predict(XGBClassifier())
-joblib.dump(XGBClassifier(),'xgbclassifier.sav')
+
 
 # In[42]:
 
 
 # GradientBoostingClassifier
 predict(GradientBoostingClassifier())
-joblib.dump(GradientBoostingClassifier(),'gbclassifier.sav')
+
 
 # In[43]:
 
 
 # RandomForestClassfier
 predict(RandomForestClassifier())
-joblib.dump(RandomForestClassifier(),'rfclassifier.sav')
+
 
 # In[44]:
 
 
 # DecisionTreeClassifier
 predict(DecisionTreeClassifier())
-joblib.dump(DecisionTreeClassifier(),'dtclassifier.sav')
+
 
 # In[45]:
 
 
 # SupportVectorClassifier
 predict(SVC())
-joblib.dump(SVC(),'svc.sav')
+
 
 # In[46]:
 
