@@ -65,7 +65,7 @@ if st.sidebar.button('Predict'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')
- '''           
+'''           
 elif st.sidebar.button('Predict_svc'):
     if 0 in list(feature_list.values()):
         st.sidebar.markdown(' # Please fill all the values')
@@ -76,7 +76,7 @@ elif st.sidebar.button('Predict_svc'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')    
- ''' 
+''' 
 st.image('water.jpg')
 st.dataframe(data.head(200))
 header = st.container()
