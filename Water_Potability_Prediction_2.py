@@ -229,7 +229,7 @@ X_train, X_test, y_train, y_test =train_test_split(X,y,test_size=0.2, random_sta
 #y_train=y_train.values
 #y_test=y_test.values
 print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
-
+'''
 Accuracy_score=[]
 def predict(model):
     model.fit(X_train,y_train)
@@ -274,7 +274,15 @@ predict(DecisionTreeClassifier())
 
 # SupportVectorClassifier
 predict(SVC())
-
+'''
+gbc=GradientBoostingClassifier()
+gbc.fit(X_train,y_train)
+preds=gbc.predict(X_test)
+Accuracy_score.append(accuracy_score(y_test,preds))
+print('Accuracy is',accuracy_score(y_test,preds))
+print('Confusion matrix of the model is',confusion_matrix(y_test,preds))
+print('Classification report:',classification_report(y_test,preds))
+joblib.dump(gbc,'gbclassifier.sav')
 
 # In[46]:
 
