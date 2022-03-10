@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
+#from xgboost import XGBClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import GradientBoostingClassifier
