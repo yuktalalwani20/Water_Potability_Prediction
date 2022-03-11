@@ -114,7 +114,7 @@ if st.sidebar.button('Predict_ann'):
         st.sidebar.markdown(' # Please fill all the values')
     else:
         #if st.sidebar.button('RF'):
-        pred = ann.predict([list(feature_list.values())])
+        pred = ann.predict([feature_list.values()])
         if pred[0]==0:
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
