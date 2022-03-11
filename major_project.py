@@ -26,6 +26,7 @@ dtc=joblib.load('dtclassifier.sav')
 xgbc=joblib.load('xgbclassifier.sav')
 gbc=joblib.load('gbclassifier.sav')
 svc=joblib.load('svc.sav')
+ann=joblib.load('ann.sav')
 main_bg = "nature-3267579_1920.jpg"
 main_bg_ext = "jpg"
 
@@ -103,6 +104,17 @@ if st.sidebar.button('Predict_xgb'):
     else:
         #if st.sidebar.button('RF'):
         pred = xgbc.predict([np.array(feature_list.values())])
+        if pred[0]==0:
+            st.sidebar.markdown('# water is not so potable for drinking purpose')
+        else:
+            st.sidebar.markdown('# water is potable for drinking purpose')
+
+if st.sidebar.button('Predict_ann'):
+    if 0 in list(feature_list.values()):
+        st.sidebar.markdown(' # Please fill all the values')
+    else:
+        #if st.sidebar.button('RF'):
+        pred = ann.predict([np.array(feature_list.values())])
         if pred[0]==0:
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
