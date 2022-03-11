@@ -350,10 +350,10 @@ network.summary()
 # In[50]:
 
 
-network.compile(optimizer='adam', 
+N=network.compile(optimizer='adam', 
               loss=tf.keras.losses.CategoricalCrossentropy(),
              metrics=['accuracy'])
-
+joblib.dump(N,'ann.sav')
 
 # In[51]:
 
