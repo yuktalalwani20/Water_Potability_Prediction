@@ -31,10 +31,10 @@ warnings.filterwarnings("ignore")
 df= pd.read_csv('https://wqp.herokuapp.com/getCSV/')
 #df.head(10)
 #df.info()
-df.isnull().sum()
+#df.isnull().sum()
 #df.describe()
 df=df.dropna()
-df.head(10)
+#df.head(10)
 
 
 #df['ph']=df['ph'].fillna(df['ph'].mean())
@@ -128,8 +128,8 @@ Turbidity_Type= ['Good for Drinking water','Medium','Above range']
 le = LabelEncoder()
 le0 = le.fit(pH_Type)
 le1 = le.fit(Turbidity_Type)
-df['pH_Type'] = le0.fit_transform(df['pH_Type'].astype(str))
-df['Turbidity_Type'] = le1.fit_transform(df['Turbidity_Type'].astype(str))
+df['pH_Type'] = le.fit_transform(df['pH_Type'].astype(str))
+df['Turbidity_Type'] = le.fit_transform(df['Turbidity_Type'].astype(str))
 #df.head(5)
 
 
