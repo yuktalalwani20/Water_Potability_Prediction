@@ -66,8 +66,7 @@ for x in df['ph']:
 
 
 #plt.figure(figsize=(7,5))
-#df['pH_Type'].value_counts().plot(kind='pie',labels = ['','',''], autopct='%1.1f%%', 
-                                  colors = ['orange','yellow','salmon'])
+#df['pH_Type'].value_counts().plot(kind='pie',labels = ['','',''], autopct='%1.1f%%', colors = ['orange','yellow','salmon'])
 #plt.legend(labels=['Basic','Acidic','Neutral'])
 #plt.show()
 #sns.countplot(data=df, x='pH_Type',hue='pH_Type')
@@ -88,8 +87,7 @@ df['Turbidity_Type'] = df['Turbidity'].apply(lambda q: Turbidity_for_potability(
 
 
 #plt.figure(figsize=(7,5))
-#df['Turbidity_Type'].value_counts().plot(kind='pie',labels = ['','',''], autopct='%1.1f%%', 
-                                                   colors = ['yellow','salmon','blue'])
+#df['Turbidity_Type'].value_counts().plot(kind='pie',labels = ['','',''], autopct='%1.1f%%', colors = ['yellow','salmon','blue'])
 
 #plt.legend(labels=['Above range', 'Medium','Good for Drinking water'])
 #plt.show()
