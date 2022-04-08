@@ -327,9 +327,9 @@ if st.sidebar.button('Predict_rf'):
         #if st.sidebar.button('RF'):
         pred = rfc.predict([[avg0,avg1,avg2,avg3]])
         if pred[0]==0:
-            st.sidebar.markdown('# water is not so potable for drinking purpose')
+            st.sidebar.markdown('# Water is not so potable for further consumption')
         else:
-            st.sidebar.markdown('# water is potable for drinking purpose')
+            st.sidebar.markdown('# water is potable for further consumption')
 '''
 if st.sidebar.button('Predict_dt'):
     if 0 in list(feature_list.values()):
@@ -362,7 +362,7 @@ if st.sidebar.button('Predict_ann'):
         if pred[0]==0:
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
-            st.sidebar.markdown('# water is potable for drinking purpose')
+            st.sidebar.markdown('# Water is potable for drinking purpose')
   '''       
 st.image('water.jpg')
 st.dataframe(data)
