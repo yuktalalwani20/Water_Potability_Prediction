@@ -51,7 +51,8 @@ st.title('Water Potability Prediction !!!!!!!')
 st.subheader('Predict the water you drink is pure or not ??')
 st.sidebar.header('Predict The Purity')
 for j in feature_list.keys():
-    feature_list[j] = st.sidebar.number_input(f'enter value for {j}')
+    avg=sum(data/data.value_counts())
+    feature_list[j] = st.write(avg)
 
 
 
