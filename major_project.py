@@ -53,15 +53,22 @@ st.sidebar.header('Predict The Purity')
 #for j in feature_list.keys():
  #   avg=sum(data/data.value_counts())
   #  feature_list[j] = st.write(avg)
-avg0=sum(data['ph'])/len(data['ph'])
-avg1=sum(data['Turbidity'])/len(data['Turbidity'])
-avg2=sum(data['pH_Type'])/len(data['pH_Type'])
-avg3=sum(data['Turbidity_Type'])/len(data['Turbidity_Type'])
+#avg0=sum(data['ph'])/len(data['ph'])
+#avg1=sum(data['Turbidity'])/len(data['Turbidity'])
+#avg2=sum(data['pH_Type'])/len(data['pH_Type'])
+#avg3=sum(data['Turbidity_Type'])/len(data['Turbidity_Type'])
+#ph=st.write(avg0)
+#turbidity=st.write(avg1)
+#ph_type=st.write(avg2)
+#turbidity_type=st.write(avg3)
+avg0=mean(data['ph'])
+avg1=mean(data['Turbidity'])
+avg2=mean(data['pH_Type'])
+avg3=mean(data['Turbidity_Type'])
 ph=st.write(avg0)
 turbidity=st.write(avg1)
 ph_type=st.write(avg2)
 turbidity_type=st.write(avg3)
-
 
 
 if st.sidebar.button('Predict_gb'):
