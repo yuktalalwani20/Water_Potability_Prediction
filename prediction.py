@@ -131,7 +131,7 @@ le1 = le.fit(Turbidity_Type)
 df['pH_Type'] = le.fit_transform(df['pH_Type'].astype(str))
 df['Turbidity_Type'] = le.fit_transform(df['Turbidity_Type'].astype(str))
 #df.head(5)
-
+df.to_csv('new_data.csv')
 
 #plt.figure(figsize=(10,8))
 #sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
@@ -249,9 +249,9 @@ y_pred_ann=network.predict(X_test, verbose=0)
 
 
 
-data = pd.read_csv('https://wqp.herokuapp.com/getCSV/')
+data = pd.read_csv('new_data.csv')
 data = data.iloc[:,0:]
-original_data = pd.read_csv('https://wqp.herokuapp.com/getCSV/')
+original_data = pd.read_csv('new_data.csv')
 feature_list = {'ph':0,'Turbidity':0,'pH_Type':0,'Turbidity_Type':0}
 
 classifier = joblib.load('algorithms.sav')
@@ -284,11 +284,19 @@ st.markdown(
 st.title('Water Potability Prediction !!!!!!!')
 st.subheader('Predict the water you drink is pure or not ??')
 st.sidebar.header('Predict The Purity')
-for j in feature_list.keys():
-    feature_list[j] = st.sidebar.text_input(f'enter value for {j}')
+#for j in feature_list.keys():
+ #   feature_list[j] = st.sidebar.text_input(f'enter value for {j}')
+avg0=data['ph'].mean()
+avg1=data['Turbidity'].mean()
+avg2=data['pH_Type'].mean()
+avg3=data['Turbidity_Type'].mean()
+st.write(avg0)
+st.write(avg1)
+st.write(avg2)
+st.write(avg3)
 
 
-
+'''
 
 if st.sidebar.button('Predict_gb'):
     if 0 in list(feature_list.values()):
@@ -353,9 +361,9 @@ if st.sidebar.button('Predict_ann'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')
-         
+  '''       
 st.image('water.jpg')
-st.dataframe(data.head(200))
+st.dataframe(data)
 header = st.container()
 body = st.container()
 with header:
