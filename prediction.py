@@ -325,7 +325,7 @@ if st.sidebar.button('Predict_rf'):
     #    st.sidebar.markdown(' # Please fill all the values')
     #else:
         #if st.sidebar.button('RF'):
-        pred = rfc.predict([[avg0,avg1,avg2,avg3])
+        pred = rfc.predict([[avg0,avg1,avg2,avg3]])
         if pred[0]==0:
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
