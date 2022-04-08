@@ -157,7 +157,7 @@ with header:
 with body:
     col1, col2 = st.columns(2)
     col1.header('About Me')
-    col1.markdown('My name is Yukta Lalwani , I'm pursuing my Computer Science Degree and love to do Machine Learning stuff')
+    col1.markdown("My name is Yukta Lalwani , I'm pursuing my Computer Science Degree and love to do Machine Learning stuff")
     col2.header('About Project')
     col2.markdown("Are you researching for water potability check, Just fill the content of water and here you go")
     
