@@ -319,16 +319,18 @@ if st.sidebar.button('Predict_sv'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')    
+'''
 if st.sidebar.button('Predict_rf'):
-    if 0 in list(feature_list.values()):
-        st.sidebar.markdown(' # Please fill all the values')
-    else:
+   # if 0 in list(feature_list.values()):
+    #    st.sidebar.markdown(' # Please fill all the values')
+    #else:
         #if st.sidebar.button('RF'):
-        pred = rfc.predict([list(feature_list.values())])
+        pred = rfc.predict([[avg0,avg1,avg2,avg3])
         if pred[0]==0:
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')
+'''
 if st.sidebar.button('Predict_dt'):
     if 0 in list(feature_list.values()):
         st.sidebar.markdown(' # Please fill all the values')
