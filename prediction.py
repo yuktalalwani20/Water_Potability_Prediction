@@ -290,10 +290,10 @@ avg0=data['ph'].mean()
 avg1=data['Turbidity'].mean()
 avg2=data['pH_Type'].mean()
 avg3=data['Turbidity_Type'].mean()
-st.sidebar.write(avg0)
-st.sidebar.write(avg1)
-st.sidebar.write(avg2)
-st.sidebar.write(avg3)
+st.sidebar.write('pH',avg0)
+st.sidebar.write('Turbidity',avg1)
+st.sidebar.write('pH Type',avg2)
+st.sidebar.write('Turbidity Type',avg3)
 
 
 '''
