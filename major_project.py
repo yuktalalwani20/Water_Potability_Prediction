@@ -63,12 +63,12 @@ st.sidebar.header('Predict The Purity')
 #turbidity_type=st.write(avg3)
 avg0=data['ph'].mean()
 avg1=data['Turbidity'].mean()
-avg2=data['pH_Type'].mean()
-avg3=data['Turbidity_Type'].mean()
+#avg2=data['pH_Type'].mean()
+#avg3=data['Turbidity_Type'].mean()
 st.write(avg0)
 st.write(avg1)
-st.write(avg2)
-st.write(avg3)
+#st.write(avg2)
+#st.write(avg3)
 
 '''
 if st.sidebar.button('Predict_gb'):
@@ -92,16 +92,18 @@ if st.sidebar.button('Predict_sv'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')    
+'''
 if st.sidebar.button('Predict_rf'):
-    if 0 in list(feature_list.values()):
-        st.sidebar.markdown(' # Please fill all the values')
-    else:
+   # if 0 in list(feature_list.values()):
+    #    st.sidebar.markdown(' # Please fill all the values')
+    #else:
         #if st.sidebar.button('RF'):
-        pred = rfc.predict([list(feature_list.values())])
-        if pred[0]==0:
-            st.sidebar.markdown('# water is not so potable for drinking purpose')
-        else:
-            st.sidebar.markdown('# water is potable for drinking purpose')
+    pred = rfc.predict([list(avg0,avg1)])
+    if pred[0]==0:
+       st.sidebar.markdown('# Water is not so potable for further consumption')
+    else:
+       st.sidebar.markdown('# Water is potable for further consumption')
+'''
 if st.sidebar.button('Predict_dt'):
     if 0 in list(feature_list.values()):
         st.sidebar.markdown(' # Please fill all the values')
