@@ -98,7 +98,7 @@ if st.sidebar.button('Predict_rf'):
     #    st.sidebar.markdown(' # Please fill all the values')
     #else:
         #if st.sidebar.button('RF'):
-    pred = rfc.predict([list(avg0,avg1)])
+    pred = rfc.predict([[avg0,avg1]])
     if pred[0]==0:
        st.sidebar.markdown('# Water is not so potable for further consumption')
     else:
