@@ -99,7 +99,7 @@ if st.sidebar.button('Predict_rf'):
     #else:
         #if st.sidebar.button('RF'):
     pred = rfc.predict([[avg0,avg1]])
-    if pred[0]==0:
+    if pred==0:
        st.sidebar.markdown('# Water is not so potable for further consumption')
     else:
        st.sidebar.markdown('# Water is potable for further consumption')
