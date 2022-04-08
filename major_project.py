@@ -18,7 +18,7 @@ import base64
 data = pd.read_csv('https://wqp.herokuapp.com/getCSV/')
 data = data.iloc[:,0:]
 original_data = pd.read_csv('https://wqp.herokuapp.com/getCSV/')
-feature_list = {'ph':0,'Turbidity':0,'pH_Type':0,'Turbidity_Type':0}
+#feature_list = {'ph':0,'Turbidity':0,'pH_Type':0,'Turbidity_Type':0}
 
 classifier = joblib.load('algorithms.sav')
 rfc=joblib.load('rfclassifier.sav')
@@ -50,10 +50,17 @@ st.markdown(
 st.title('Water Potability Prediction !!!!!!!')
 st.subheader('Predict the water you drink is pure or not ??')
 st.sidebar.header('Predict The Purity')
-for j in feature_list.keys():
-    avg=sum(data/data.value_counts())
-    feature_list[j] = st.write(avg)
-
+#for j in feature_list.keys():
+ #   avg=sum(data/data.value_counts())
+  #  feature_list[j] = st.write(avg)
+avg0=sum(data['ph'])/len(data['ph'])
+avg1=sum(data['Turbidity'])/len(data['Turbidity'])
+avg2=sum(data['pH_Type'])/len(data['pH_Type'])
+avg3=sum(data['Turbidity_Type'])/len(data['Turbidity_Type'])
+ph=st.write(avg0)
+turbidity=st.write(avg1)
+ph_type=st.write(avg2)
+turbidity_type=st.write(avg3)
 
 
 
