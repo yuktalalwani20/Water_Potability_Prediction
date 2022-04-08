@@ -61,16 +61,16 @@ st.sidebar.header('Predict The Purity')
 #turbidity=st.write(avg1)
 #ph_type=st.write(avg2)
 #turbidity_type=st.write(avg3)
-avg0=data['ph'].mean(axis=0)
-avg1=data['Turbidity'].mean(axis=0)
-avg2=data['pH_Type'].mean(axis=0)
-avg3=data['Turbidity_Type'].mean(axis=0)
-ph=st.write(avg0)
-turbidity=st.write(avg1)
-ph_type=st.write(avg2)
-turbidity_type=st.write(avg3)
+avg0=data['ph'].mean()
+avg1=data['Turbidity'].mean()
+avg2=data['pH_Type'].mean()
+avg3=data['Turbidity_Type'].mean()
+st.write(avg0)
+st.write(avg1)
+st.write(avg2)
+st.write(avg3)
 
-
+'''
 if st.sidebar.button('Predict_gb'):
     if 0 in list(feature_list.values()):
         st.sidebar.markdown(' # Please fill all the values')
@@ -155,8 +155,9 @@ with header:
 with body:
     col1, col2 = st.columns(2)
     col1.header('About Me')
-    col1.markdown('''My name is Yukta Lalwani , I'm pursuing my Computer Science Degree and love to do Machine Learning stuff''')
+    col1.markdown('My name is Yukta Lalwani , I'm pursuing my Computer Science Degree and love to do Machine Learning stuff')
     col2.header('About Project')
     col2.markdown("Are you researching for water potability check, Just fill the content of water and here you go")
+    '''
 
         
