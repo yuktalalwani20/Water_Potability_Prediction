@@ -28,7 +28,7 @@ warnings.filterwarnings("ignore")
 
 
 
-df= pd.read_csv('https://wqp.herokuapp.com/getCSV/')
+df= pd.read_csv('water_potability_2.csv')
 #df.head(10)
 #df.info()
 #df.isnull().sum()
