@@ -65,8 +65,8 @@ avg0=data['ph'].mean()
 avg1=data['Turbidity'].mean()
 #avg2=data['pH_Type'].mean()
 #avg3=data['Turbidity_Type'].mean()
-st.write(avg0)
-st.write(avg1)
+st.sidebar.write(avg0)
+st.sidebar.write(avg1)
 #st.write(avg2)
 #st.write(avg3)
 
@@ -136,9 +136,9 @@ if st.sidebar.button('Predict_ann'):
             st.sidebar.markdown('# water is not so potable for drinking purpose')
         else:
             st.sidebar.markdown('# water is potable for drinking purpose')
-         
+'''         
 st.image('water.jpg')
-st.dataframe(data.head(200))
+st.dataframe(data)
 header = st.container()
 body = st.container()
 with header:
@@ -160,6 +160,6 @@ with body:
     col1.markdown('My name is Yukta Lalwani , I'm pursuing my Computer Science Degree and love to do Machine Learning stuff')
     col2.header('About Project')
     col2.markdown("Are you researching for water potability check, Just fill the content of water and here you go")
-    '''
+    
 
         
