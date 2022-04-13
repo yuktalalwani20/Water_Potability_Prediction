@@ -4,10 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
-from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import plotly.express as px
@@ -20,13 +16,8 @@ data = data.iloc[:,0:]
 original_data = pd.read_csv('water_potability_2.csv')
 #feature_list = {'ph':0,'Turbidity':0,'pH_Type':0,'Turbidity_Type':0}
 
-classifier = joblib.load('algorithms.sav')
+
 rfc=joblib.load('rfclassifier.sav')
-dtc=joblib.load('dtclassifier.sav')
-xgbc=joblib.load('xgbclassifier.sav')
-gbc=joblib.load('gbclassifier.sav')
-svc=joblib.load('svc.sav')
-ann=joblib.load('ann.sav')
 main_bg = "nature-3267579_1920.jpg"
 main_bg_ext = "jpg"
 
@@ -48,7 +39,7 @@ st.markdown(
 )
 
 st.title('Water Potability Prediction !!!!!!!')
-st.subheader('Predict the water you drink is pure or not ??')
+st.subheader('Predict the water you drink is still pure or not ??')
 st.sidebar.header('Predict The Purity')
 #for j in feature_list.keys():
  #   avg=sum(data/data.value_counts())
@@ -80,23 +71,23 @@ if st.sidebar.button('Predict_rf'):
         #if st.sidebar.button('RF'):
     pred = rfc.predict([[avg0,avg1]])
     if pred==0:
-       st.sidebar.markdown('# Water is not so potable for further consumption')
+        st.sidebar.markdown('# Water is not so potable for further consumption')
     else:
-       st.sidebar.markdown('# Water is potable for further consumption')
+        st.sidebar.markdown('# Water is potable for further consumption')
 
-if avg0>7:
-   st.sidebar.write('Water is still basic')
-elif avg0<7:
-   st.sidebar.write('Water is still acidic')
-elif avg0==7:
-   st.sidebar.write('Water is still neutral')
-
-if avg1>5:
-   st.sidebar.write('Turbidity is above range')
-elif avg1<5:
-   st.sidebar.write('Turbidity is medium')
-elif avg1==7 and avg1>1:
-   st.sidebar.write('Water is still good for drinking')
+    if avg0>7:
+        st.sidebar.write('Water is still basic')
+    elif avg0<7:
+        st.sidebar.write('Water is still acidic')
+    elif avg0==7:
+        st.sidebar.write('Water is still neutral')
+ 
+    if avg1>5:
+        st.sidebar.write('Turbidity is above range')
+    elif avg1<5:
+        st.sidebar.write('Turbidity is medium')
+    elif avg1==7 and avg1>1:
+        st.sidebar.write('Water is still good for drinking')
 
 st.image('water.jpg')
 st.dataframe(data)
