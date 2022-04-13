@@ -70,29 +70,7 @@ st.sidebar.write(avg1)
 #st.write(avg2)
 #st.write(avg3)
 
-'''
-if st.sidebar.button('Predict_gb'):
-    if 0 in list(feature_list.values()):
-        st.sidebar.markdown(' # Please fill all the values')
-    else:
-        #if st.sidebar.button('RF'):
-        pred = gbc.predict([list(feature_list.values())])
-        if pred[0]==0:
-            st.sidebar.markdown('# water is not so potable for drinking purpose')
-        else:
-            st.sidebar.markdown('# water is potable for drinking purpose')
-          
-if st.sidebar.button('Predict_sv'):
-    if 0 in list(feature_list.values()):
-        st.sidebar.markdown(' # Please fill all the values')
-    else:
-        #if st.sidebar.button('RF'):
-        pred = svc.predict([list(feature_list.values())])
-        if pred[0]==0:
-            st.sidebar.markdown('# water is not so potable for drinking purpose')
-        else:
-            st.sidebar.markdown('# water is potable for drinking purpose')    
-'''
+
 if st.sidebar.button('Predict_rf'):
    # if 0 in list(feature_list.values()):
     #    st.sidebar.markdown(' # Please fill all the values')
@@ -103,40 +81,21 @@ if st.sidebar.button('Predict_rf'):
        st.sidebar.markdown('# Water is not so potable for further consumption')
     else:
        st.sidebar.markdown('# Water is potable for further consumption')
-'''
-if st.sidebar.button('Predict_dt'):
-    if 0 in list(feature_list.values()):
-        st.sidebar.markdown(' # Please fill all the values')
-    else:
-        #if st.sidebar.button('RF'):
-        pred = dtc.predict([list(feature_list.values())])
-        if pred[0]==0:
-            st.sidebar.markdown('# water is not so potable for drinking purpose')
-        else:
-            st.sidebar.markdown('# water is potable for drinking purpose')
 
-if st.sidebar.button('Predict_xgb'):
-    if 0 in list(feature_list.values()):
-        st.sidebar.markdown(' # Please fill all the values')
-    else:
-        #if st.sidebar.button('RF'):
-        pred = xgbc.predict([np.array(feature_list.values())])
-        if pred[0]==0:
-            st.sidebar.markdown('# water is not so potable for drinking purpose')
-        else:
-            st.sidebar.markdown('# water is potable for drinking purpose')
+ if avg0>7:
+    st.write('Water is still basic')
+ elif avg0<7:
+    st.write('Water is still acidic')
+ elif avg0==7:
+    st.write('Water is still neutral')
 
-if st.sidebar.button('Predict_ann'):
-    if 0 in list(feature_list.values()):
-        st.sidebar.markdown(' # Please fill all the values')
-    else:
-        #if st.sidebar.button('RF'):
-        pred = ann.predict([list(feature_list.values())])
-        if pred[0]==0:
-            st.sidebar.markdown('# water is not so potable for drinking purpose')
-        else:
-            st.sidebar.markdown('# water is potable for drinking purpose')
-'''         
+ if avg1>5:
+    st.write('Turbidity is above range')
+ elif avg1<5:
+    st.write('Turbidity is medium')
+ elif avg1==7: and avg1>1:
+    st.write('Water is still good for drinking')
+
 st.image('water.jpg')
 st.dataframe(data)
 header = st.container()
@@ -156,10 +115,11 @@ with header:
         col1.header(f'{plot_type} of {feat} feature')
 with body:
     col1, col2 = st.columns(2)
-    col1.header('About Me')
-    col1.markdown("My name is Yukta Lalwani , I'm pursuing my Computer Science Degree and love to do Machine Learning stuff")
-    col2.header('About Project')
-    col2.markdown("Are you researching for water potability check, Just fill the content of water and here you go")
+    col1.header('About Us')
+    #col1.markdown("My name is Yukta Lalwani , I'm pursuing my Computer Science Degree and love to do Machine Learning stuff")
+    col1.markdown("This project is made by Khushi Shahu, Kiran Assudani, Krishan Harwani, Yukta Lalwani")
+   # col2.header('About Project')
+   # col2.markdown("Are you researching for water potability check, Just fill the content of water and here you go")
     
 
         
