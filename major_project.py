@@ -95,7 +95,7 @@ if avg1>5:
    st.write('Turbidity is above range')
 elif avg1<5:
    st.write('Turbidity is medium')
-elif avg1==7: and avg1>1:
+elif avg1==7 and avg1>1:
    st.write('Water is still good for drinking')
 
 st.image('water.jpg')
