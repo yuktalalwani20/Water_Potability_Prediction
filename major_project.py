@@ -69,8 +69,8 @@ avg3=min(data['ph'])
 #avg3=data['Turbidity_Type'].mean()
 st.sidebar.write(avg0)
 st.sidebar.write(avg1)
-st.write(avg2)
-st.write(avg3)
+st.sidebar.write(avg2)
+st.sidebar.write(avg3)
 
 
 if st.sidebar.button('Predict_rf'):
