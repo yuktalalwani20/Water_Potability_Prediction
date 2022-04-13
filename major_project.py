@@ -60,8 +60,8 @@ avg3=min(data['ph'])
 #avg3=data['Turbidity_Type'].mean()
 st.sidebar.write(avg0)
 st.sidebar.write(avg1)
-st.sidebar.write(avg2)
-st.sidebar.write(avg3)
+#st.sidebar.write(avg2)
+#st.sidebar.write(avg3)
 
 
 if st.sidebar.button('Predict_rf'):
@@ -110,9 +110,9 @@ with body:
     col1, col2 = st.columns(2)
     col1.header('About Us')
     #col1.markdown("My name is Yukta Lalwani , I'm pursuing my Computer Science Degree and love to do Machine Learning stuff")
-    col1.markdown("This project is made by Khushi Shahu, Kiran Assudani, Krishan Harwani, Yukta Lalwani")
+    col1.markdown("This project is made by Khushi Shahu, Kiran Assudani, Krishan Harwani and Yukta Lalwani")
    # col2.header('About Project')
-   # col2.markdown("Are you researching for water potability check, Just fill the content of water and here you go")
+   # col2.markdown("Are you researching for water potability check, Just predict the content of water and here you go")
     
 
         
