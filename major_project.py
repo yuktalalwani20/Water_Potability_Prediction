@@ -85,18 +85,18 @@ if st.sidebar.button('Predict_rf'):
        st.sidebar.markdown('# Water is potable for further consumption')
 
 if avg0>7:
-   st.write('Water is still basic')
+   st.sidebar.write('Water is still basic')
 elif avg0<7:
-   st.write('Water is still acidic')
+   st.sidebar.write('Water is still acidic')
 elif avg0==7:
-   st.write('Water is still neutral')
+   st.sidebar.write('Water is still neutral')
 
 if avg1>5:
-   st.write('Turbidity is above range')
+   st.sidebar.write('Turbidity is above range')
 elif avg1<5:
-   st.write('Turbidity is medium')
+   st.sidebar.write('Turbidity is medium')
 elif avg1==7 and avg1>1:
-   st.write('Water is still good for drinking')
+   st.sidebar.write('Water is still good for drinking')
 
 st.image('water.jpg')
 st.dataframe(data)
