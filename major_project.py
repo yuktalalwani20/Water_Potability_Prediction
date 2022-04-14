@@ -17,7 +17,7 @@ original_data = pd.read_csv('data (12).csv')
 #feature_list = {'ph':0,'Turbidity':0,'pH_Type':0,'Turbidity_Type':0}
 
 
-rfc=joblib.load('rf.sav')
+rfc=joblib.load('rfclassifier.sav')
 main_bg = "nature-3267579_1920.jpg"
 main_bg_ext = "jpg"
 
