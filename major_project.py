@@ -11,9 +11,9 @@ import joblib
 import base64
 
 
-data = pd.read_csv('data (12).csv')
+data = pd.read_csv('https://wqp.herokuapp.com/getCSV/')
 data = data.iloc[:,0:]
-original_data = pd.read_csv('data (12).csv')
+original_data = pd.read_csv('https://wqp.herokuapp.com/getCSV/')
 #feature_list = {'ph':0,'Turbidity':0,'pH_Type':0,'Turbidity_Type':0}
 
 
