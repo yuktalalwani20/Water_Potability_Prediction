@@ -40,7 +40,7 @@ st.markdown(
 
 st.title('Water Potability Prediction !!!!!!!')
 st.subheader('Predict the water you drink is still pure or not ??')
-st.sidebar.header('Predict The Purity')
+st.header('Predict The Purity')
 #for j in feature_list.keys():
  #   avg=sum(data/data.value_counts())
   #  feature_list[j] = st.write(avg)
@@ -66,33 +66,61 @@ st.sidebar.write(avg1)
 #st.sidebar.write(avg3)
 
 
-if st.sidebar.button('Predict_rf'):
+#if st.sidebar.button('Predict_rf'):
+   # if 0 in list(feature_list.values()):
+    #    st.sidebar.markdown(' # Please fill all the values')
+    #else:
+        #if st.sidebar.button('RF'):
+ #   pred = rfc.predict([[avg0,avg1]])
+  #  if pred==0:
+   #     st.sidebar.markdown('# Water is not so potable for further consumption')
+   # else:
+    #    st.sidebar.markdown('# Water is potable for further consumption')
+
+ #   if avg0>7:
+  #      st.sidebar.write('Water is still basic')
+ #   elif avg0<7:
+  #      st.sidebar.write('Water is still acidic')
+  #  elif avg0==7:
+   #     st.sidebar.write('Water is still neutral')
+ 
+#    if avg1>5:
+ #       st.sidebar.write('Turbidity is above range')
+  #  elif avg1<5:
+   #     st.sidebar.write('Turbidity is medium')
+    #elif avg1==7 and avg1>1:
+     #   st.sidebar.write('Water is still good for drinking')
+
+st.image('water.jpg')
+st.dataframe(data)
+st.write('Average value of pH from the data')
+st.write(avg0)
+st.write('Average value of Turbidity from the data')
+st.write(avg1)
+if st.button('Predict_rf'):
    # if 0 in list(feature_list.values()):
     #    st.sidebar.markdown(' # Please fill all the values')
     #else:
         #if st.sidebar.button('RF'):
     pred = rfc.predict([[avg0,avg1]])
     if pred==0:
-        st.sidebar.markdown('# Water is not so potable for further consumption')
+        st.markdown('# Water is not so potable for further consumption')
     else:
-        st.sidebar.markdown('# Water is potable for further consumption')
+        st.markdown('# Water is potable for further consumption')
 
     if avg0>7:
-        st.sidebar.write('Water is still basic')
+        st.write('Water is still basic')
     elif avg0<7:
-        st.sidebar.write('Water is still acidic')
+        st.write('Water is still acidic')
     elif avg0==7:
-        st.sidebar.write('Water is still neutral')
+        st.write('Water is still neutral')
  
     if avg1>5:
-        st.sidebar.write('Turbidity is above range')
+        st.write('Turbidity is above range')
     elif avg1<5:
-        st.sidebar.write('Turbidity is medium')
+        st.write('Turbidity is medium')
     elif avg1==7 and avg1>1:
-        st.sidebar.write('Water is still good for drinking')
-
-st.image('water.jpg')
-st.dataframe(data)
+        st.write('Water is still good for drinking')
 header = st.container()
 body = st.container()
 with header:
