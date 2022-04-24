@@ -52,10 +52,8 @@ st.header('Predict The Purity')
 #turbidity=st.write(avg1)
 #ph_type=st.write(avg2)
 #turbidity_type=st.write(avg3)
-#avg0=data['ph'].mean()
-#avg1=data['Turbidity'].mean()
-avg0=data['ph']
-avg1=data['Turbidity']
+avg0=data['ph'].mean()
+avg1=data['Turbidity'].mean()
 avg2=max(data['ph'])
 avg3=min(data['ph'])
 #avg2=data['pH_Type'].mean()
