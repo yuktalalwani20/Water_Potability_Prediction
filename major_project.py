@@ -52,8 +52,10 @@ st.header('Predict The Purity')
 #turbidity=st.write(avg1)
 #ph_type=st.write(avg2)
 #turbidity_type=st.write(avg3)
-avg0=data['ph'].mean()
-avg1=data['Turbidity'].mean()
+#avg0=data['ph'].mean()
+#avg1=data['Turbidity'].mean()
+avg0=data['ph']
+avg1=data['Turbidity']
 avg2=max(data['ph'])
 avg3=min(data['ph'])
 #avg2=data['pH_Type'].mean()
@@ -125,15 +127,15 @@ header = st.container()
 body = st.container()
 with header:
     col1,col2 = st.columns(2)
-    plot_type = col1.selectbox('Plot the feature',['histogram','line plot','area chart'])
+    plot_type = col1.selectbox('Plot the feature',['Histogram','Line plot','Area chart'])
     feat = col1.selectbox('Which feature', ['ph','Turbidity'])
-    if plot_type == 'histogram':
+    if plot_type == 'Histogram':
         col2.bar_chart(data[feat][:200])
         col1.header(f'{plot_type} of {feat} feature')
-    if plot_type == 'line plot':
+    if plot_type == 'Line plot':
         col2.line_chart(data[feat][:200])
         col1.header(f'{plot_type} of {feat} feature')
-    if plot_type == 'area chart':
+    if plot_type == 'Area chart':
         col2.area_chart(data[feat][:200])
         col1.header(f'{plot_type} of {feat} feature')
 with body:
