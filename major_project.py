@@ -58,10 +58,10 @@ avg2=max(data['ph'])
 avg3=min(data['ph'])
 #avg2=data['pH_Type'].mean()
 #avg3=data['Turbidity_Type'].mean()
-st.sidebar.write('Average value of pH from the data')
-st.sidebar.write(avg0)
-st.sidebar.write('Average value of Turbidity from the data')
-st.sidebar.write(avg1)
+#st.sidebar.write('Average value of pH from the data')
+#st.sidebar.write(avg0)
+#st.sidebar.write('Average value of Turbidity from the data')
+#st.sidebar.write(avg1)
 #st.sidebar.write(avg2)
 #st.sidebar.write(avg3)
 
@@ -104,9 +104,9 @@ if st.button('Predict_rf'):
         #if st.sidebar.button('RF'):
     pred = rfc.predict([[avg0,avg1]])
     if pred==0:
-        st.markdown('# Water is not so potable for further consumption')
+        st.markdown('### Water is not so potable for further consumption')
     else:
-        st.markdown('# Water is potable for further consumption')
+        st.markdown('### Water is potable for further consumption')
 
     if avg0>7:
         st.write('Water is still basic')
